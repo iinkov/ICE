@@ -14,6 +14,7 @@ class MusicServiceSpec extends AnyFunSpec with Matchers with BeforeAndAfterEach 
   }
 
   describe("Track operations") {
+
     it("Add new Track") {
       service.addTrack("Artist1", Track("title1", "genre1", 5))
 
@@ -43,6 +44,7 @@ class MusicServiceSpec extends AnyFunSpec with Matchers with BeforeAndAfterEach 
       service.fetchArtistTracks("alias2") shouldBe Set(Track("title1", "genre1", 6))
     }
   }
+
   describe("Artist operations") {
 
     describe("Add alias to Artist") {
@@ -71,7 +73,9 @@ class MusicServiceSpec extends AnyFunSpec with Matchers with BeforeAndAfterEach 
       }
     }
   }
+
   describe("Artist of the day") {
+
     it("Shows all of the artists fairly") {
       service.addTrack("Some Artist 1", Track("title1", "genre1", 9))
       service.addTrack("Some Artist 2", Track("title1", "genre1", 9))
@@ -86,6 +90,7 @@ class MusicServiceSpec extends AnyFunSpec with Matchers with BeforeAndAfterEach 
     }
 
     describe("Doesn't show artists that doesn't have names") {
+
       it("Removed before activation") {
         service.addTrack("Some Artist 1", Track("title1", "genre1", 9))
         service.editArtistNames("Some Artist 1", Set.empty)

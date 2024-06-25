@@ -48,6 +48,7 @@ class MusicServiceSpec extends AnyFunSpec with Matchers with BeforeAndAfterEach 
   describe("Artist operations") {
 
     describe("Add alias to Artist") {
+
       it("Absent Artist") {
         service.editArtistNames("Absent Artist", Set("AnotherName1", "AnotherName2"))
 
